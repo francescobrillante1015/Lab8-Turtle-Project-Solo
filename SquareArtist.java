@@ -1,13 +1,13 @@
 public class SquareArtist extends TurtleArtist {
     private final int sideLength;
 
-    public SquareArtist(String name, int sideLength) {
-        super(name);
+    public SquareArtist(String artistName, int sideLength) {
+        super(artistName);
         this.sideLength = sideLength;
     }
 
-    public SquareArtist(String name, Turtle turtle, int sideLength) {
-        super(name, turtle);
+    public SquareArtist(String artistName, Turtle turtle, int sideLength) {
+        super(artistName, turtle);
         this.sideLength = sideLength;
     }
 
@@ -21,7 +21,7 @@ public class SquareArtist extends TurtleArtist {
         getTurtle().fillColor("blue");
         getTurtle().outlineColor("black");
 
-        for (int i = 0; i < 4; i++) {
+        for (int side = 0; side < 4; side++) {
             getTurtle().forward(sideLength);
             getTurtle().left(90);
         }
@@ -33,16 +33,17 @@ public class SquareArtist extends TurtleArtist {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (!(obj instanceof SquareArtist)) {
+        if (!(object instanceof SquareArtist)) {
             return false;
         }
 
-        SquareArtist other = (SquareArtist) obj;
-        return getName().equals(other.getName()) && sideLength == other.sideLength;
+        SquareArtist otherSquare = (SquareArtist) object;
+        return getName().equals(otherSquare.getName())
+                && sideLength == otherSquare.sideLength;
     }
 }

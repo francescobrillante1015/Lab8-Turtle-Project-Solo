@@ -1,13 +1,13 @@
 public class CircleArtist extends TurtleArtist {
     private final int steps;
 
-    public CircleArtist(String name, int steps) {
-        super(name);
+    public CircleArtist(String artistName, int steps) {
+        super(artistName);
         this.steps = steps;
     }
 
-    public CircleArtist(String name, Turtle turtle, int steps) {
-        super(name, turtle);
+    public CircleArtist(String artistName, Turtle turtle, int steps) {
+        super(artistName, turtle);
         this.steps = steps;
     }
 
@@ -21,7 +21,7 @@ public class CircleArtist extends TurtleArtist {
         getTurtle().fillColor("red");
         getTurtle().outlineColor("black");
 
-        for (int i = 0; i < steps; i++) {
+        for (int step = 0; step < steps; step++) {
             getTurtle().forward(5);
             getTurtle().left(360.0 / steps);
         }
@@ -33,16 +33,17 @@ public class CircleArtist extends TurtleArtist {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (!(obj instanceof CircleArtist)) {
+        if (!(object instanceof CircleArtist)) {
             return false;
         }
 
-        CircleArtist other = (CircleArtist) obj;
-        return getName().equals(other.getName()) && steps == other.steps;
+        CircleArtist otherCircle = (CircleArtist) object;
+        return getName().equals(otherCircle.getName())
+                && steps == otherCircle.steps;
     }
 }

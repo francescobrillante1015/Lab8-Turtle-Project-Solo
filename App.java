@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Welcome to the Turtle Artist Program!");
         System.out.println("Choose what you want to draw:");
@@ -11,55 +11,55 @@ public class App {
         System.out.println("3. Both");
         System.out.print("Enter your choice: ");
 
-        int choice = input.nextInt();
+        int choice = keyboard.nextInt();
 
         if (choice == 1) {
             System.out.print("Enter the side length for the square: ");
-            int sideLength = input.nextInt();
+            int sideLength = keyboard.nextInt();
 
-            SquareArtist square = new SquareArtist("Square Turtle", sideLength);
-            square.moveTo(100, 100);
-            square.faceRight();
+            SquareArtist squareArtist = new SquareArtist("Square Turtle", sideLength);
+            squareArtist.moveTo(100, 100);
+            squareArtist.faceRight();
 
-            System.out.println(square);
-            square.draw();
+            System.out.println(squareArtist);
+            squareArtist.draw();
 
         } else if (choice == 2) {
             System.out.print("Enter how many steps for the circle: ");
-            int steps = input.nextInt();
+            int steps = keyboard.nextInt();
 
             if (steps <= 0) {
                 System.out.println("Steps must be greater than 0.");
             } else {
-                CircleArtist circle = new CircleArtist("Circle Turtle", steps);
-                circle.moveTo(300, 300);
-                circle.faceRight();
+                CircleArtist circleArtist = new CircleArtist("Circle Turtle", steps);
+                circleArtist.moveTo(300, 300);
+                circleArtist.faceRight();
 
-                System.out.println(circle);
-                circle.draw();
+                System.out.println(circleArtist);
+                circleArtist.draw();
             }
 
         } else if (choice == 3) {
-            SquareArtist square = new SquareArtist("Square Turtle", 100);
-            CircleArtist circle = new CircleArtist("Circle Turtle", 72);
+            SquareArtist squareArtist = new SquareArtist("Square Turtle", 100);
+            CircleArtist circleArtist = new CircleArtist("Circle Turtle", 72);
 
-            square.moveTo(100, 100);
-            square.faceRight();
+            squareArtist.moveTo(100, 100);
+            squareArtist.faceRight();
 
-            circle.moveTo(300, 300);
-            circle.faceRight();
+            circleArtist.moveTo(300, 300);
+            circleArtist.faceRight();
 
-            System.out.println(square);
-            System.out.println(circle);
+            System.out.println(squareArtist);
+            System.out.println(circleArtist);
 
-            square.draw();
-            circle.draw();
+            squareArtist.draw();
+            circleArtist.draw();
 
         } else {
             System.out.println("Invalid choice.");
         }
 
         Turtle.zoomFit();
-        input.close();
+        keyboard.close();
     }
 }

@@ -1,19 +1,19 @@
 public abstract class TurtleArtist {
-    private final String name;
+    private final String artistName;
     private final Turtle turtle;
 
-    public TurtleArtist(String name) {
-        this.name = name;
+    public TurtleArtist(String artistName) {
+        this.artistName = artistName;
         this.turtle = new Turtle();
     }
 
-    public TurtleArtist(String name, Turtle turtle) {
-        this.name = name;
+    public TurtleArtist(String artistName, Turtle turtle) {
+        this.artistName = artistName;
         this.turtle = turtle;
     }
 
     public String getName() {
-        return name;
+        return artistName;
     }
 
     public Turtle getTurtle() {
