@@ -17,8 +17,8 @@ public class CircleArtist extends TurtleArtist {
 
     @Override
     public void draw() {
-        getTurtle().shape("circle");
-        getTurtle().fillColor("red");
+        getTurtle().shape("turtle");
+        getTurtle().fillColor("green");
         getTurtle().outlineColor("black");
 
         for (int step = 0; step < steps; step++) {

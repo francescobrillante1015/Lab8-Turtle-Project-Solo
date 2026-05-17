@@ -17,8 +17,8 @@ public class SquareArtist extends TurtleArtist {
 
     @Override
     public void draw() {
-        getTurtle().shape("square");
-        getTurtle().fillColor("blue");
+        getTurtle().shape("turtle");
+        getTurtle().fillColor("green");
         getTurtle().outlineColor("black");
 
         for (int side = 0; side < 4; side++) {
