@@ -1,11 +1,24 @@
+/**
+ * Author: @francescobrillante
+ * Lab 8 Turtle Artist Project
+ *
+ * This class runs the turtle drawing program.
+ */
+
 import java.util.Scanner;
 
 public class App {
+    /**
+     * Main method that starts the program.
+     *
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
         int choice = 0;
 
+        // Keeps the program running until the user chooses to quit.
         while (choice != 4) {
             System.out.println("Welcome to the Turtle Artist Program!");
             System.out.println("Choose what you want to draw:");
